@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+import random,string
 # Create your views here.
 # myapp/views.py
 from django.http import HttpResponse
@@ -22,3 +22,10 @@ def print_to_console(request):
    # return HttpResponse('Form Submitted Successfully')
         a1={'user_input': user_input}
         return render(request,'print_to_console.html',a1)
+
+
+def otp(request):
+    ran1 = ''.join(random.sample(string.digits, k=4))
+    print(f'OTP: {ran1}')
+    a1 = {'ran1': ran1}
+    return render(request,'Otpgenerate.html',a1)
