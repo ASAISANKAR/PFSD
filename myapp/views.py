@@ -29,3 +29,7 @@ def otp(request):
     print(f'OTP: {ran1}')
     a1 = {'ran1': ran1}
     return render(request,'Otpgenerate.html',a1)
+
+
+def myteam(request):
+    return render(request,'Myteam.html')

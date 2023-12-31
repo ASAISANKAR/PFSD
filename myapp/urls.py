@@ -10,4 +10,5 @@ urlpatterns = [
    path('print/',print1,name='print'),
    path('s/',print_to_console,name='print_to_console'),
    path('otp1/',otp,name='Otpgenerate'),
+   path('myteam/',myteam,name='myteam'),
 ]
