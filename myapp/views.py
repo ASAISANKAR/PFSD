@@ -33,3 +33,22 @@ def otp(request):
 
 def myteam(request):
     return render(request,'Myteam.html')
+
+
+def getdate1(request):
+    return render(request,'date_time.html')
+
+import datetime
+from django.shortcuts import render
+from .forms import *
+def get_date(request):
+    if(request.method=='POST'):
+        form=IntegerDateForm(request.POST)
+        if form.is_valid():
+            integer_value=form.cleaned_data['integer_value']
+            date_value=form.cleaned_data['date_value']
+            updated_date=date_value+datetime.timedelta(days=integer_value)
+            return render(request,'date_time.html',{'updated_date':updated_date})
+        else:
+            form=IntegerDateForm()
+        return render(request,'date_time.html',{'form':form})

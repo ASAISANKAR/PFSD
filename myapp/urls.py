@@ -11,4 +11,6 @@ urlpatterns = [
    path('s/',print_to_console,name='print_to_console'),
    path('otp1/',otp,name='Otpgenerate'),
    path('myteam/',myteam,name='myteam'),
+   path('date_time/',getdate1,name='date_time'),
+   path('date_time1/',get_date,name='date_time1')
 ]
