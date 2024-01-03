@@ -52,3 +52,11 @@ def get_date(request):
         else:
             form=IntegerDateForm()
         return render(request,'date_time.html',{'form':form})
+
+
+import time
+def time11(request):
+    time1=time.asctime()
+    print(f'Time: {time1}')
+    a1 = {'time1': time1}
+    return render(request,'NewHomePage.html',a1)
