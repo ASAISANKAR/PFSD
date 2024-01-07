@@ -13,5 +13,8 @@ urlpatterns = [
    path('otp1/',otp,name='Otpgenerate'),
    path('myteam/',myteam,name='myteam'),
    path('date_time/',getdate1,name='date_time'),
-   path('date_time1/',get_date,name='date_time1')
+   path('date_time1/',get_date,name='date_time1'),
+   path('register/',register,name='register'),
+   path('registerloginfunction',registerloginfunction,name='registerloginfunction'),
+   path('admin/',admin,name='admin'),
 ]
