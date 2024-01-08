@@ -1,5 +1,5 @@
 from django.db import models
-import time
+
 # Create your models here.
 class Sankar(models.Model):
     name=models.CharField(max_length=100)
@@ -12,6 +12,7 @@ class Sankar(models.Model):
 class Login(models.Model):
     name=models.CharField(max_length=100)
     password=models.CharField(max_length=100)
+
 
     class Meta:
         db_table="Login"

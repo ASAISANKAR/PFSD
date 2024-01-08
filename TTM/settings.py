@@ -74,10 +74,22 @@ WSGI_APPLICATION = 'TTM.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+'''
+For Postgre SQL
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': '',
+       'USER': '',
+       'PASSWORD': '',
+       'HOST': '',
+       'PORT': '',
+'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+
+
     }
 }
 
