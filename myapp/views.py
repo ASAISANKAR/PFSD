@@ -61,7 +61,7 @@ def time11(request):
     time1=time.asctime()
     print(f'Time: {time1}')
     a1 = {'time1': time1}
-    return render(request,'NewHomePage.html',a1)
+    return render(request,'userhomepage.html',a1)
 
 def register(request):
     return render(request,'registerpage.html')
@@ -84,3 +84,26 @@ def registerloginfunction(request):
 
 def admin(request):
     return redirect('admin')
+
+def user(request):
+    return render(request,'userhomepage.html')
+
+def login(request):
+    if request.method=='POST':
+        name=request.POST.get('name')
+        password=request.POST.get('password')
+
+        if Sankar.objects.filter(name=name).exists():
+            if Sankar.objects.filter(password=password).exists():
+                Login.objects.create(name=name, password=password)
+                return redirect('user')
+
+            return render(request,'Loginpage.html')
+        return render(request, 'Loginpage.html')
+    return render(request, 'Loginpage.html')
+
+def loginpage(request):
+    return render(request,'Loginpage.html')
+
+
+

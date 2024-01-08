@@ -47,9 +47,15 @@
           <a class="nav-link" href="{% url 'admin' %}">Admin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
+          <a class="nav-link" href="">Logged In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'newhomepage' %}">Logout</a>
         </li>
 
+        <li class="nav-item">
+    <a class="nav-link" href="{% url 'time1' %}">Date & Time: {{time1}}</a>
+</li>
 
       </ul>
       <form class="d-flex" role="search">
