@@ -61,7 +61,10 @@ def time11(request):
 
     time1=time.asctime()
     print(f'Time: {time1}')
-    a1 = {'time1': time1}
+
+    first_log=Login.objects.last()
+    name=first_log.name
+    a1 = {'time1': time1,'name1':name}
     return render(request,'userhomepage.html',a1)
 
 def register(request):
@@ -94,13 +97,13 @@ def login(request):
         name=request.POST.get('name')
         password=request.POST.get('password')
 
-        if Sankar.objects.filter(name=name).exists():
-            if Sankar.objects.filter(password=password).exists():
-                Login.objects.create(name=name, password=password)
-                return redirect('user')
+        if Sankar.objects.filter(name=name,password=password).exists():
+            Login.objects.create(name=name, password=password)
+            name1=name
+            a2={'name1':name1}
+            return render(request,'userhomepage.html',a2)
 
-            return render(request,'Loginpage.html')
-        return render(request, 'Loginpage.html')
+        return HttpResponse("User Name or Password is Incorrect")
     return render(request, 'Loginpage.html')
 
 def loginpage(request):
