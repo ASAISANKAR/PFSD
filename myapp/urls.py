@@ -20,8 +20,7 @@ urlpatterns = [
    path('loginpage/',loginpage,name='loginpage'),
    path('login/',login,name='login'),
    path('user/',user,name='user'),
-   path('pie/',pie,name='pie'),
-   path('pie_chart/',pie_chart,name='pie_chart'),
    path('cars/',cars,name='cars'),
+
 
 ]
