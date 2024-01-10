@@ -109,5 +109,34 @@ def login(request):
 def loginpage(request):
     return render(request,'Loginpage.html')
 
+import matplotlib.pyplot as plt
+import numpy as np
+
+def pie_chart(request):
+    if request.method == 'POST':
+        form = PieChartForm(request.POST)
+        if form.is_valid():
+            # Process user input
+            y_values = [int(val) for val in form.cleaned_data['y_values'].split(',')]
+            labels = [label.strip() for label in form.cleaned_data['labels'].split(',')]
+
+            # Create pie chart
+            plt.pie(y_values, labels=labels, startangle=90)
+            plt.savefig('static/images/pie_chart.png')  # Save the chart image
+            img1={'chart_image': '/static/images/pie_chart.png'}
+            return render(request, 'piechart.html', img1)
+    else:
+        form = PieChartForm()
+    return render(request, 'piechart.html', {'form': form})
+
+def pie(request):
+    return render(request,'piechart.html')
+
+def cars(request):
+    return render(request,'cars.html')
+
+
+
+
 
 
