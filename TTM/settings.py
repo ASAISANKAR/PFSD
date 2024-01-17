@@ -84,6 +84,7 @@ For Postgre SQL
        'PORT': '',
 '''
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -92,7 +93,35 @@ DATABASES = {
 
     }
 }
+'''
 
+
+#Offline Postgre
+DATABASES = {
+    'default' : {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Travel',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5433',
+    }
+}
+
+
+'''
+#Railway Postgre
+DATABASES = {
+    'default' : {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'B4aBFg62a34eDEGg1fBbBEAfgA4eGC3g',
+        'HOST': 'roundhouse.proxy.rlwy.net',
+        'PORT': '20448',
+    }
+}
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
