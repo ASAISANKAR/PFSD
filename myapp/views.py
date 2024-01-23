@@ -138,6 +138,29 @@ def pie(request):
 def cars(request):
     return render(request,'cars.html')
 
+import requests
+
+def weatherpage(request):
+    return render(request,'weatherappinput.html')
+
+def weatherlogic(request):
+        if request.method == 'POST':
+            place = request.POST['place']
+            API_KEY = 'a314b8b8c6e4602ee39e7400ed68fe03'
+            url = f'http://api.openweathermap.org/data/2.5/weather?q={place}&appid={API_KEY}'
+            response = requests.get(url)
+            if response.status_code == 200:
+                data = response.json()
+                temperature = data['main']['temp']
+                humidity = data['main']['humidity']
+                temperature1 = round(temperature - 273.15, 2)
+                return render(request, 'weatherappinput.html',
+                              {'city': str.upper(place), 'temperature1': temperature1, 'humidity': humidity})
+            else:
+                error_message = 'City not found. Please try again.'
+                return render(request, 'weatherappinput.html', {'error_message': error_message})
+
+
 
 
 

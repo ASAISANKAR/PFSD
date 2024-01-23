@@ -21,6 +21,7 @@ urlpatterns = [
    path('login/',login,name='login'),
    path('user/',user,name='user'),
    path('cars/',cars,name='cars'),
-
+   path('weather/',weatherpage,name='weather'),
+   path('weatherlogic',weatherlogic,name='weatherlogic'),
 
 ]
