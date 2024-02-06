@@ -85,7 +85,7 @@ For Postgre SQL
        'PORT': '',
 '''
 
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -94,9 +94,9 @@ DATABASES = {
 
     }
 }
+
+
 '''
-
-
 #Offline Postgre
 DATABASES = {
     'default' : {
@@ -108,7 +108,7 @@ DATABASES = {
         'PORT': '5433',
     }
 }
-
+'''
 
 '''
 #Railway Postgre
