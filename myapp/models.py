@@ -17,4 +17,9 @@ class Login(models.Model):
     class Meta:
         db_table="Login"
 
-
+class Feedback(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.EmailField(primary_key=True)
+    Comments=models.CharField(max_length=100)
+    class Meta:
+        db_table="Feedback" #To show the table name to the user

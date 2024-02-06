@@ -160,6 +160,17 @@ def weatherlogic(request):
                 error_message = 'City not found. Please try again.'
                 return render(request, 'weatherappinput.html', {'error_message': error_message})
 
+def feedbackform(request):
+    return render(request,'feedbackform.html');
+
+def feedbacksave(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        Comments = request.POST.get('Comments')
+        Feedback.objects.create(name=name, email=email, Comments=Comments)
+        return redirect('newhomepage')
+    return render(request, 'feedbackform.html')
 
 
 

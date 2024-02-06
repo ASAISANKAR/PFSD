@@ -23,5 +23,7 @@ urlpatterns = [
    path('cars/',cars,name='cars'),
    path('weather/',weatherpage,name='weather'),
    path('weatherlogic',weatherlogic,name='weatherlogic'),
+   path('feedback/',feedbackform,name='feedback'),
+   path('feedbacksave/',feedbacksave,name='feedbacksave'),
 
 ]
