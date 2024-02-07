@@ -25,7 +25,5 @@ urlpatterns = [
    path('weatherlogic',weatherlogic,name='weatherlogic'),
    path('feedback/',feedbackform,name='feedback'),
    path('feedbacksave/',feedbacksave,name='feedbacksave'),
-   path('pie_char/',pie,name='pie_char'),
-   path('pie/',pie_chart,name='pie'),
 
 ]

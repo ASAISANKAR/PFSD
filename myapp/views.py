@@ -108,7 +108,7 @@ def login(request):
 
 def loginpage(request):
     return render(request,'Loginpage.html')
-
+'''
 def pie(request):
     return render(request,'pie_chart.html')
 
@@ -134,7 +134,7 @@ def pie_chart(request):
 
 def pie(request):
     return render(request,'piechart.html')
-
+'''
 
 def cars(request):
     return render(request,'cars.html')
