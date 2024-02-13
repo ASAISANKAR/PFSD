@@ -6,5 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
     path('app/',include('crud_app.urls')),
+    path('mail/',include('mailapp.urls')),
 
 ]
