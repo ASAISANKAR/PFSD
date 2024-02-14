@@ -20,7 +20,7 @@ def sendmail(request):
             send_mail(
                 subject,
                 message_body,
-                'saisankar3193@gmail.com',
+                'klusendrandommail@gmail.com',
                 [recipient_email],
                 fail_silently=False,
             )
@@ -37,7 +37,7 @@ def attachmentmail(request):
             subject = 'Email Attachment in Django Project'
             message_body = 'Hey, Check the Attachment'
             try:
-                mail = EmailMessage(subject=subject, body=message_body, from_email='saisankar3193@gmail.com', to=[recipient_email],cc=['asankar2004@gmail.com'])
+                mail = EmailMessage(subject=subject, body=message_body, from_email='klusendrandommail@gmail.com', to=[recipient_email],cc=['asankar2004@gmail.com'])
                 mail.attach_file(r'static\CSV.csv')
                 mail.attach_file(r'static\dummy.pdf')
                 mail.send()
@@ -53,7 +53,7 @@ def dummymail(request):
     subject = 'Email Attachment in Django Project'
     message_body = 'Hey, Check the Attachment'
     try:
-        mail = EmailMessage(subject=subject, body=message_body, from_email='saisankar3193@gmail.com',
+        mail = EmailMessage(subject=subject, body=message_body, from_email='klusendrandommail@gmail.com',
                             to=[recipient_email], cc=['asankar2004@gmail.com'])
         file_path = 'static/file.xlsx'
         file_url = 'https://docs.google.com/spreadsheets/d/1jFlUjTEYD2Z56a8NiicOGFQJH16ujs3d_ShMtD3J-JY/export?format=xlsx'
@@ -101,7 +101,7 @@ def storemail(request):
                 subject = 'Email Attachment in Django Project'
                 message_body = 'Hey, Check the Attachment'
                 try:
-                    mail = EmailMessage(subject=subject, body=message_body, from_email='saisankar3193@gmail.com',
+                    mail = EmailMessage(subject=subject, body=message_body, from_email='klusendrandommail@gmail.com',
                                         to=[recipient_email], cc=['asankar2004@gmail.com'])
                     print(f'Sent email to {recipient_email}')
                     mail.attach_file(file_path1)
