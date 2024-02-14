@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attachment Mail</title>
+</head>
+<body>
+{% block body %}
+<div>
+    <h1 align="center">Sending Attachments in Mail</h1>
+</div>
+<div>
+     <div class="container">
+         <form method="post" action="{% url 'storemail' %}">
+         <div class="row">
+             <div  align="center" class="col">
+<div class="col-md-6">
+
+                {% csrf_token %}
+ <br><br>
+
+                <div class="form-group">
+                    <label for="attach">Paste the Document link which is uploaded in cloud to send in mail as Attachment</label>
+                    <br>
+                    <input type="text" class="form-control-file" name="attach" required>
+                </div>
+    <br>
+ <div class="col text-center"> <!-- Centering the submit button -->
+                 <button type="submit" class="btn btn-success">Submit</button>
+             </div>
+        </div>
+         </div>
+             </div>
+         </form>
+         </div>
+     </div>
+
+{% endblock %}
+</body>
+</html>

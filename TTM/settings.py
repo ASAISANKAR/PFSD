@@ -57,7 +57,7 @@ ROOT_URLCONF = 'TTM.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates' 'crud_app/templates'],
+        'DIRS': ['templates' 'crud_app/templates' 'mailapp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

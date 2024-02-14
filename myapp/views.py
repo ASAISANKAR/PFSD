@@ -1,3 +1,4 @@
+from django.core.mail import send_mail
 from django.shortcuts import render
 import random,string
 # Create your views here.
@@ -170,6 +171,19 @@ def feedbacksave(request):
         email = request.POST.get('email')
         Comments = request.POST.get('Comments')
         Feedback.objects.create(name=name, email=email, Comments=Comments)
+
+        #mail
+        recipient_email = email
+        subject = 'Feed Back Form Testing'  # Set your subject here
+        message_body = 'Hello, '+name+'\n'+'\n'+'\n'+'\n'+'\n'+'This is your Feed Back\n'+Comments # Set your email content here
+        send_mail(
+            subject,
+            message_body,
+            'saisankar3193@gmail.com',
+            [recipient_email],
+            fail_silently=False,
+        )
+        print(f'Sent email to {recipient_email}')
         return redirect('newhomepage')
     return render(request, 'feedbackform.html')
 
