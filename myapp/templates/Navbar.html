@@ -25,7 +25,7 @@
           <a class="nav-link" href="{% url 'myteam' %}">My Team</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/app/">CRUD App</a>
+          <a class="nav-link" href="{% url 'insert-emp' %}">CRUD App</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,7 +43,7 @@
             <li><a class="dropdown-item" href="{% url 'attachmentmail' %}">Send Mail with Attachment ✔</a></li>
             <li><a class="dropdown-item" href="{% url 'dummymail' %}">Dummy Mail ✔</a></li>
              <li><a class="dropdown-item" href="{% url 'attachmail' %}">Attachment Mail with Receipt Details</a></li>
-
+             <li><a class="dropdown-item" href="{% url 'review_list' %}">Review</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>

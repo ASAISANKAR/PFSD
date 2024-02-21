@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'myapp',
     'crud_app',
     'mailapp',
+    'reviews',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'TTM.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates' 'crud_app/templates' 'mailapp/templates'],
+        'DIRS': ['templates' 'crud_app/templates' 'mailapp/templates' 'reviews/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
